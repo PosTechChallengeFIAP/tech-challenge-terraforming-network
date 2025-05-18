@@ -32,7 +32,7 @@ resource "aws_db_subnet_group" "postgres_subnet_group" {
 resource "aws_security_group" "postgres_sg" {
     name        = "tech-challenge-postgres-sg"
     description = "Security group for PostgreSQL database"
-    vpc_id      = aws_vpc.main.vpc_id
+    vpc_id      = aws_vpc.main.id
 
     ingress {
         from_port   = 5432
