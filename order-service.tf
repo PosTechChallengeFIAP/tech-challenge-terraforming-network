@@ -20,20 +20,12 @@ resource "aws_subnet" "orderApi2" {
   }
 }
 
-resource "aws_internet_gateway" "orderApi" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name = "tech-challenge-order-service-igw"
-  }
-}
-
 resource "aws_route_table" "orderApi" {
   vpc_id = aws_vpc.main.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.orderApi.id
+    gateway_id = aws_internet_gateway.main.id
   }
 
   tags = {

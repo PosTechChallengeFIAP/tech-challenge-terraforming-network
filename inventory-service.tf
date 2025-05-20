@@ -20,20 +20,12 @@ resource "aws_subnet" "inventoryApi2" {
   }
 }
 
-resource "aws_internet_gateway" "inventoryApi" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name = "tech-challenge-inventory-service-igw"
-  }
-}
-
 resource "aws_route_table" "inventoryApi" {
   vpc_id = aws_vpc.main.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.inventoryApi.id
+    gateway_id = aws_internet_gateway.main.id
   }
 
   tags = {
