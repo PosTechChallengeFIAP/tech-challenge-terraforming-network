@@ -1,6 +1,6 @@
 resource "aws_subnet" "private_subnet_docdb_a" {
     vpc_id                  = aws_vpc.main.id
-    cidr_block              = "10.0.50.0/24"
+    cidr_block              = "10.0.5.0/24"
     availability_zone       = "us-west-2a"
     map_public_ip_on_launch = false
 
@@ -11,7 +11,7 @@ resource "aws_subnet" "private_subnet_docdb_a" {
 
 resource "aws_subnet" "private_subnet_docdb_b" {
     vpc_id                  = aws_vpc.main.id
-    cidr_block              = "10.0.51.0/24"
+    cidr_block              = "10.0.6.0/24"
     availability_zone       = "us-west-2b"
     map_public_ip_on_launch = false
 
