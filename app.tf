@@ -42,13 +42,13 @@ resource "aws_route_table" "app" {
 }
 
 resource "aws_route_table_association" "app" {
-  subnet_id      = aws_subnet.app.id
-  route_table_id = aws_route_table.app_subnet_1.id
+  subnet_id      = aws_subnet.app_subnet_1.id
+  route_table_id = aws_route_table.app.id
 }
 
 resource "aws_route_table_association" "app2" {
-  subnet_id      = aws_subnet.app2.id
-  route_table_id = aws_route_table.app_subnet_2.id
+  subnet_id      = aws_subnet.app_subnet_2.id
+  route_table_id = aws_route_table.app.id
 }
 
 resource "aws_security_group" "app" {
